@@ -11,6 +11,7 @@ import classnames from 'classnames';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import withBaseUrl from '@docusaurus/withBaseUrl';
+import './styles.css';
 
 function Footer() {
   const context = useDocusaurusContext();
@@ -25,57 +26,45 @@ function Footer() {
   const {copyright, links = [], logo} = footer;
 
   return (
-    <footer
-      className={classnames('footer', {
-        'footer--dark': footer.style === 'dark',
-      })}>
-      <div className="container">
-        {links && links.length > 0 && (
-          <div className="row footer__links">
-            {links.map((linkItem, i) => (
-              <div key={i} className="col footer__col">
-                {linkItem.title != null ? (
-                  <h4 className="footer__title">{linkItem.title}</h4>
-                ) : null}
-                {linkItem.items != null &&
-                Array.isArray(linkItem.items) &&
-                linkItem.items.length > 0 ? (
-                  <ul className="footer__items">
-                    {linkItem.items.map(item => (
-                      <li key={item.href || item.to} className="footer__item">
-                        <Link
-                          className="footer__link-item"
-                          {...item}
-                          {...(item.href
-                            ? {
-                                target: '_blank',
-                                rel: 'noopener noreferrer',
-                                href: item.href,
-                              }
-                            : {
-                                to: withBaseUrl(item.to),
-                              })}>
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-              </div>
-            ))}
-          </div>
-        )}
-        {(logo || copyright) && (
-          <div className="text--center">
-            {logo && logo.src && (
-              <div className="margin-bottom--sm">
-                <img className="footer__logo" alt={logo.alt} src={logo.src} />
-              </div>
-            )}
-            {copyright}
-          </div>
-        )}
-      </div>
+    <footer>
+      {links && links.length > 0 && (
+        <section>
+          {links.map((linkItem, i) => (
+            <div key={i}>
+              {linkItem.title != null ? <h4>{linkItem.title}</h4> : null}
+              {linkItem.items != null &&
+              Array.isArray(linkItem.items) &&
+              linkItem.items.length > 0 ? (
+                <ul>
+                  {linkItem.items.map(item => (
+                    <li key={item.href || item.to}>
+                      <Link
+                        {...item}
+                        {...(item.href
+                          ? {
+                              target: '_blank',
+                              rel: 'noopener noreferrer',
+                              href: item.href,
+                            }
+                          : {
+                              to: withBaseUrl(item.to),
+                            })}>
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </div>
+          ))}
+        </section>
+      )}
+      {(logo || copyright) && (
+        <section>
+          {logo && logo.src && <img alt={logo.alt} src={logo.src} />}
+          {copyright}
+        </section>
+      )}
     </footer>
   );
 }
