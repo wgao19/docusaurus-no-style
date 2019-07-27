@@ -17,7 +17,7 @@ module.exports = function(context, options) {
     },
 
     getClientModules() {
-      return [customCss];
+      return [path.resolve(__dirname, "./style.css"), customCss];
     }
   };
 };

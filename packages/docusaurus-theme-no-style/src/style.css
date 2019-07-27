@@ -1,0 +1,7 @@
+/** 
+ * all the css variables
+ * there should be a better place for this
+ */
+:root {
+  --navbar-height: 40px;
+}
