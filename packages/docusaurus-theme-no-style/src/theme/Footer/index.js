@@ -11,7 +11,6 @@ import classnames from 'classnames';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import withBaseUrl from '@docusaurus/withBaseUrl';
-import './styles.css';
 
 function Footer() {
   const context = useDocusaurusContext();

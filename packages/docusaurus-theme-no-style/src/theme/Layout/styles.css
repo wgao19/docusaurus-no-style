@@ -29,6 +29,14 @@ footer,
 nav {
   grid-area: 3 / 1 / 4 / 4;
 }
+footer {
+  text-align: center;
+}
+footer section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 main {
   grid-area: 2 / 2 / 3 / 3;
   /* when the page is short, grow main to reveal only 40px of footer */
