@@ -40,7 +40,7 @@ function Navbar() {
   const {title, logo, links = []} = navbar;
 
   return (
-    <header>
+    <header role="navigation">
       <Link to={baseUrl}>
         {logo != null && <img src={withBaseUrl(logo.src)} alt={logo.alt} />}
         {title != null && <strong>{title}</strong>}

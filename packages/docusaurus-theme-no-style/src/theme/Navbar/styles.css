@@ -5,31 +5,31 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-header {
+header[role='navigation'] {
   display: flex;
   padding: var(--default-padding, 0);
   width: calc(100vw - 2 * var(--default-padding));
   background: white;
 }
 
-header a {
+header[role='navigation'] a {
   height: var(--navbar-height);
   display: flex;
   align-items: center;
 }
 
-header a:not(:first-of-type) {
+header[role='navigation'] a:not(:first-of-type) {
   margin-left: 0.5em;
 }
 
-header a strong {
+header[role='navigation'] a strong {
   margin-left: 0.5em;
 }
 
-header a[position='right'] {
+header[role='navigation'] a[position='right'] {
   margin-left: auto;
 }
 
-header img {
+header[role='navigation'] img {
   max-height: 100%;
 }
