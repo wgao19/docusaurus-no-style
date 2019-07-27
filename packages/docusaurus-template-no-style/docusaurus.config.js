@@ -68,17 +68,35 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc. Built with Docusaurus.`
     }
   },
-  presets: [
+  themes: [
+    "@docusaurus/theme-no-style"
+    // Don't add this if algolia config is not defined
+    // algolia && "@docusaurus/theme-search-algolia"
+  ],
+  plugins: [
     [
-      require.resolve("../preset"),
+      "@docusaurus/plugin-content-docs-legacy",
       {
-        docs: {
-          sidebarPath: require.resolve("./sidebars.js")
-        },
-        theme: {
-          customCss: require.resolve("./src/css/custom.css")
-        }
+        sidebarPath: require.resolve("./sidebars.js")
       }
-    ]
+    ],
+    ["@docusaurus/plugin-content-blog"],
+    ["@docusaurus/plugin-content-pages"]
+    // isProd && googleAnalytics && "@docusaurus/plugin-google-analytics",
+    // isProd && gtag && "@docusaurus/plugin-google-gtag",
+    // isProd && ["@docusaurus/plugin-sitemap"]
   ]
+  // presets: [
+  //   [
+  //     require.resolve("../preset"),
+  //     {
+  //       docs: {
+  //         sidebarPath: require.resolve("./sidebars.js")
+  //       },
+  //       theme: {
+  //         customCss: require.resolve("./src/css/custom.css")
+  //       }
+  //     }
+  //   ]
+  // ]
 };
