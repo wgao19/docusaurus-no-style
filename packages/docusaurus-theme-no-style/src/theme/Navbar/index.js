@@ -5,13 +5,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, { useCallback, useState, useEffect } from "react";
-import Link from "@docusaurus/Link";
-import Head from "@docusaurus/Head";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import withBaseUrl from "@docusaurus/withBaseUrl";
+import React, {useCallback, useState, useEffect} from 'react';
+import Link from '@docusaurus/Link';
+import Head from '@docusaurus/Head';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import withBaseUrl from '@docusaurus/withBaseUrl';
 
-import "./styles.css";
+import './styles.css';
 
 function NavLink(props) {
   return (
@@ -19,15 +19,14 @@ function NavLink(props) {
       {...props}
       {...(props.href
         ? {
-            target: "_blank",
-            rel: "noopener noreferrer",
-            href: props.href
+            target: '_blank',
+            rel: 'noopener noreferrer',
+            href: props.href,
           }
         : {
             // activeClassName: "navbar__link--active",
-            to: withBaseUrl(props.to)
-          })}
-    >
+            to: withBaseUrl(props.to),
+          })}>
       {props.label}
     </Link>
   );
@@ -35,30 +34,28 @@ function NavLink(props) {
 
 function Navbar() {
   const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
-  const { baseUrl, themeConfig = {} } = siteConfig;
-  const { navbar = {} } = themeConfig;
-  const { title, logo, links = [] } = navbar;
+  const {siteConfig = {}} = context;
+  const {baseUrl, themeConfig = {}} = siteConfig;
+  const {navbar = {}} = themeConfig;
+  const {title, logo, links = []} = navbar;
 
   return (
-    <React.Fragment>
-      <nav>
-        <Link to={baseUrl}>
-          {logo != null && <img src={withBaseUrl(logo.src)} alt={logo.alt} />}
-          {title != null && <strong>{title}</strong>}
-        </Link>
-        {links
-          .filter(linkItem => linkItem.position !== "right")
-          .map((linkItem, i) => (
-            <NavLink {...linkItem} key={i} />
-          ))}
-        {links
-          .filter(linkItem => linkItem.position === "right")
-          .map((linkItem, i) => (
-            <NavLink {...linkItem} key={i} />
-          ))}
-      </nav>
-    </React.Fragment>
+    <header>
+      <Link to={baseUrl}>
+        {logo != null && <img src={withBaseUrl(logo.src)} alt={logo.alt} />}
+        {title != null && <strong>{title}</strong>}
+      </Link>
+      {links
+        .filter(linkItem => linkItem.position !== 'right')
+        .map((linkItem, i) => (
+          <NavLink {...linkItem} key={i} />
+        ))}
+      {links
+        .filter(linkItem => linkItem.position === 'right')
+        .map((linkItem, i) => (
+          <NavLink {...linkItem} key={i} />
+        ))}
+    </header>
   );
 }
 

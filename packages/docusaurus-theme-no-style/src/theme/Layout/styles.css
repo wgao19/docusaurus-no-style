@@ -11,6 +11,35 @@ body {
   transition: var(--ifm-transition-fast) ease color;
 }
 
+#__docusaurus {
+  display: grid;
+  grid-template-columns: minmax(min-content, 40ch) minmax(45em, 1fr) minmax(
+      min-content,
+      40ch
+    );
+  grid-template-rows: minmax(min-content, 40px) 1fr minmax(min-content, 40px);
+  grid-column-gap: 14px;
+  grid-row-gap: 0px;
+}
+
+header {
+  grid-area: 1 / 1 / 2 / 4;
+}
+footer,
+nav {
+  grid-area: 3 / 1 / 4 / 4;
+}
 main {
-  padding-top: 4rem;
+  grid-area: 2 / 2 / 3 / 3;
+}
+aside:first-of-type {
+  grid-area: 2 / 1 / 3 / 2;
+}
+aside:last-of-type {
+  grid-area: 2 / 3 / 3 / 4;
+}
+article,
+nav {
+  max-width: 45em;
+  margin: 0 auto;
 }

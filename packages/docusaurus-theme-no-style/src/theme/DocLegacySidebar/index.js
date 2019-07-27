@@ -62,7 +62,9 @@ function DocLegacySidebar(props) {
   };
 
   return (
-    <aside>{thisSidebar.map(item => renderItem(item, {root: true}))}</aside>
+    <aside>
+      <ul>{thisSidebar.map(item => renderItem(item, {root: true}))}</ul>
+    </aside>
   );
 }
 

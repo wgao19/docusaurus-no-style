@@ -16,12 +16,15 @@ function Home() {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-      <h1>content of home page</h1>
-      <ul>
-        <li>
-          footer is a swizzled component with minimum styling using CSS Modules
-        </li>
-      </ul>
+      <main>
+        <h1>content of home page</h1>
+        <ul>
+          <li>
+            footer is a swizzled component with minimum styling using CSS
+            Modules
+          </li>
+        </ul>
+      </main>
     </Layout>
   );
 }

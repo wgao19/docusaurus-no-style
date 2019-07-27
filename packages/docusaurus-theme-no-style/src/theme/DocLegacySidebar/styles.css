@@ -6,6 +6,5 @@
  */
 
 aside {
-  position: fixed;
   padding: var(--default-padding, 0);
 }

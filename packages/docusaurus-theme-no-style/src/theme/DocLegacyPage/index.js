@@ -28,18 +28,10 @@ function DocLegacyPage(props) {
       title={title}
       image={image}
       permalink={permalink}>
-      <div className="container container--fluid">
-        <div className="row">
-          <div className="col col--3">
-            <DocLegacySidebar docsMetadata={docsMetadata} sidebar={sidebar} />
-          </div>
-          <main className="col">
-            <MDXProvider components={MDXComponents}>
-              {renderRoutes(route.routes, {docsMetadata})}
-            </MDXProvider>
-          </main>
-        </div>
-      </div>
+      <DocLegacySidebar docsMetadata={docsMetadata} sidebar={sidebar} />
+      <MDXProvider components={MDXComponents}>
+        {renderRoutes(route.routes, {docsMetadata})}
+      </MDXProvider>
     </Layout>
   );
 }

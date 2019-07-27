@@ -5,33 +5,31 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-nav {
+header {
   display: flex;
   padding: var(--default-padding, 0);
-  position: fixed;
   width: calc(100vw - 2 * var(--default-padding));
   background: white;
-  top: 0;
 }
 
-nav a {
+header a {
   height: var(--navbar-height);
   display: flex;
   align-items: center;
 }
 
-nav a:not(:first-of-type) {
+header a:not(:first-of-type) {
   margin-left: 0.5em;
 }
 
-nav a strong {
+header a strong {
   margin-left: 0.5em;
 }
 
-nav a[position='right'] {
+header a[position='right'] {
   margin-left: auto;
 }
 
-nav img {
+header img {
   max-height: 100%;
 }
