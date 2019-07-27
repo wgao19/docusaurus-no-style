@@ -10,3 +10,7 @@ body {
   padding-top: var(--ifm-navbar-height);
   transition: var(--ifm-transition-fast) ease color;
 }
+
+main {
+  padding-top: 4rem;
+}

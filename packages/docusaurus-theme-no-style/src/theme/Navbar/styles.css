@@ -8,6 +8,10 @@
 nav {
   display: flex;
   padding: var(--default-padding, 0);
+  position: fixed;
+  width: calc(100vw - 2 * var(--default-padding));
+  background: white;
+  top: 0;
 }
 
 nav a {
