@@ -9,12 +9,10 @@
 
 import React from 'react';
 
-import './styles.css';
-
 const Heading = Tag => ({id, ...props}) => (
   <Tag {...props}>
-    <a aria-hidden="true" className="anchor" id={id} />
-    <a aria-hidden="true" className="hash-link" href={`#${id}`}>
+    <a aria-hidden="true" id={id} />
+    <a aria-hidden="true" href={`#${id}`}>
       #
     </a>
     {props.children}
