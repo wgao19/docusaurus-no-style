@@ -6,14 +6,11 @@
  */
 
 import React, { useCallback, useState, useEffect } from "react";
-import Toggle from "react-toggle";
 
 import Link from "@docusaurus/Link";
 import Head from "@docusaurus/Head";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import withBaseUrl from "@docusaurus/withBaseUrl";
-
-import SearchBar from "@theme/SearchBar";
 
 import classnames from "classnames";
 
@@ -40,17 +37,9 @@ function NavLink(props) {
   );
 }
 
-const Moon = () => <span className={classnames(styles.toggle, styles.moon)} />;
-const Sun = () => <span className={classnames(styles.toggle, styles.sun)} />;
-
 function Navbar() {
   const context = useDocusaurusContext();
   const [sidebarShown, setSidebarShown] = useState(false);
-  const currentTheme =
-    typeof document !== "undefined"
-      ? document.querySelector("html").getAttribute("data-theme")
-      : "";
-  const [theme, setTheme] = useState(currentTheme);
   const { siteConfig = {} } = context;
   const { baseUrl, themeConfig = {} } = siteConfig;
   const { navbar = {} } = themeConfig;
@@ -63,31 +52,8 @@ function Navbar() {
     setSidebarShown(false);
   }, [setSidebarShown]);
 
-  useEffect(() => {
-    try {
-      const localStorageTheme = localStorage.getItem("theme");
-      setTheme(localStorageTheme);
-    } catch (err) {
-      console.error(err);
-    }
-  }, []);
-
-  const onToggleChange = e => {
-    const nextTheme = e.target.checked ? "dark" : "";
-    setTheme(nextTheme);
-    try {
-      localStorage.setItem("theme", nextTheme);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
   return (
     <React.Fragment>
-      <Head>
-        {/* TODO: Do not assume that it is in english language */}
-        <html lang="en" data-theme={theme} />
-      </Head>
       <nav
         className={classnames("navbar", "navbar--light", "navbar--fixed-top", {
           "navbar--sidebar-show": sidebarShown
@@ -143,16 +109,6 @@ function Navbar() {
               .map((linkItem, i) => (
                 <NavLink {...linkItem} key={i} />
               ))}
-            <Toggle
-              className={styles.displayOnlyInLargeViewport}
-              aria-label="Dark mode toggle"
-              checked={theme === "dark"}
-              onChange={onToggleChange}
-              icons={{
-                checked: <Moon />,
-                unchecked: <Sun />
-              }}
-            />
           </div>
         </div>
         <div
@@ -174,17 +130,6 @@ function Navbar() {
               )}
               {title != null && <strong>{title}</strong>}
             </Link>
-            {sidebarShown && (
-              <Toggle
-                aria-label="Dark mode toggle in sidebar"
-                checked={theme === "dark"}
-                onChange={onToggleChange}
-                icons={{
-                  checked: <Moon />,
-                  unchecked: <Sun />
-                }}
-              />
-            )}
           </div>
           <div className="navbar__sidebar__items">
             <div className="menu">
