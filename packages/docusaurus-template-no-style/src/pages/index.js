@@ -6,7 +6,6 @@
  */
 
 import React from 'react';
-import classnames from 'classnames';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -53,46 +52,29 @@ function Home() {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-      <header className={classnames('hero hero--primary', styles.heroBanner)}>
-        <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
-          <div className={styles.buttons}>
-            <Link
-              className={classnames(
-                'button button--outline button--secondary button--lg',
-                styles.getStarted,
-              )}
-              to={withBaseUrl('docs/doc1')}>
-              Get Started
-            </Link>
-          </div>
-        </div>
+      <header className={styles.heroBanner}>
+        <h1>{siteConfig.title}</h1>
+        <p>{siteConfig.tagline}</p>
+        <Link className={styles.getStarted} to={withBaseUrl('docs/doc1')}>
+          Get Started
+        </Link>
       </header>
       <main>
         {features && features.length && (
           <section className={styles.features}>
-            <div className="container">
-              <div className="row">
-                {features.map(({imageUrl, title, description}, idx) => (
-                  <div
-                    key={idx}
-                    className={classnames('col col--4', styles.feature)}>
-                    {imageUrl && (
-                      <div className="text--center">
-                        <img
-                          className={styles.featureImage}
-                          src={withBaseUrl(imageUrl)}
-                          alt={title}
-                        />
-                      </div>
-                    )}
-                    <h3>{title}</h3>
-                    <p>{description}</p>
-                  </div>
-                ))}
+            {features.map(({imageUrl, title, description}, idx) => (
+              <div key={idx} className={styles.feature}>
+                {imageUrl && (
+                  <img
+                    className={styles.featureImage}
+                    src={withBaseUrl(imageUrl)}
+                    alt={title}
+                  />
+                )}
+                <h3>{title}</h3>
+                <p>{description}</p>
               </div>
-            </div>
+            ))}
           </section>
         )}
       </main>

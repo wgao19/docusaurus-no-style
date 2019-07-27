@@ -11,7 +11,7 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 4rem 1rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -23,17 +23,16 @@
   }
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .features {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
-  width: 100%;
+  padding: 0 1rem;
+}
+.feature {
+  text-align: center;
+}
+.feature p {
+  text-align: left;
 }
 
 .featureImage {
