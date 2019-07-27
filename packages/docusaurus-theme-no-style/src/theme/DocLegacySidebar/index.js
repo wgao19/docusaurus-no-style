@@ -7,7 +7,6 @@
 
 import React, {useState} from 'react';
 import Link from '@docusaurus/Link';
-import './styles.css';
 
 function DocLegacySidebar(props) {
   const {docsMetadata, sidebar} = props;
