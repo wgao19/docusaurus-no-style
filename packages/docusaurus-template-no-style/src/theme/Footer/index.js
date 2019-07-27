@@ -6,8 +6,6 @@
  */
 
 import React from 'react';
-import classnames from 'classnames';
-
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import withBaseUrl from '@docusaurus/withBaseUrl';
