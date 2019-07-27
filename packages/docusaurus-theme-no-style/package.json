@@ -1,5 +1,5 @@
 {
-  "name": "@docusaurus/theme-no-style",
+  "name": "docusaurus-theme-no-style",
   "version": "0.0.1",
   "description": "Styleless theme for Docusaurus",
   "main": "src/index.js",
