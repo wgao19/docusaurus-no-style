@@ -7,6 +7,7 @@
 
 nav {
   display: flex;
+  padding: var(--default-padding, 0);
 }
 
 nav a {
@@ -23,7 +24,7 @@ nav a strong {
   margin-left: 0.5em;
 }
 
-nav a[position="right"] {
+nav a[position='right'] {
   margin-left: auto;
 }
 
