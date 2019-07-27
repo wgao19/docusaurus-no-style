@@ -47,3 +47,14 @@ aside {
   max-width: 45em;
   margin: 0 auto;
 }
+nav[role='paginator'] {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+a[role='prev']::before {
+  content: '« ';
+}
+a[role='next']::after {
+  content: ' »';
+}

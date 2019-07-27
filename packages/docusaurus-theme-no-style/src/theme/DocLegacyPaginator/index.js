@@ -15,18 +15,21 @@ function DocLegacyPaginator(props) {
   } = props;
 
   return (
-    <nav>
-      {metadata.previous && docs[metadata.previous] && (
-        <Link to={docs[metadata.previous].permalink}>
-          <h5>Previous</h5>
-          <h4>&laquo; {metadata.previous_title}</h4>
+    <nav role="paginator">
+      {metadata.previous && docs[metadata.previous] ? (
+        <Link to={docs[metadata.previous].permalink} role="prev">
+          <span>{metadata.previous_title}</span>
         </Link>
+      ) : (
+        // the span holds a space that pushes the next link to the right
+        <span />
       )}
-      {metadata.next && docs[metadata.next] && (
-        <Link to={docs[metadata.next].permalink}>
-          <h5>Next</h5>
-          <h4>{metadata.next_title} &raquo;</h4>
+      {metadata.next && docs[metadata.next] ? (
+        <Link to={docs[metadata.next].permalink} role="next">
+          {metadata.next_title}
         </Link>
+      ) : (
+        <span />
       )}
     </nav>
   );
