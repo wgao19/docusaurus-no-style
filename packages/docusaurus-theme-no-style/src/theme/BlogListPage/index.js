@@ -16,27 +16,18 @@ function BlogListPage(props) {
 
   return (
     <Layout title="Blog" description="Blog">
-      <div className="container margin-vert--xl">
-        <div className="row">
-          <div className="col col--8 col--offset-2">
-            {items.map(
-              ({content: BlogPostContent, metadata: blogPostMetadata}) => (
-                <div
-                  className="margin-bottom--xl"
-                  key={blogPostMetadata.permalink}>
-                  <BlogPostItem
-                    frontMatter={BlogPostContent.frontMatter}
-                    metadata={blogPostMetadata}
-                    truncated>
-                    <BlogPostContent />
-                  </BlogPostItem>
-                </div>
-              ),
-            )}
-            <BlogListPaginator metadata={metadata} />
-          </div>
-        </div>
-      </div>
+      <main>
+        {items.map(({content: BlogPostContent, metadata: blogPostMetadata}) => (
+          <BlogPostItem
+            key={blogPostMetadata.permalink}
+            frontMatter={BlogPostContent.frontMatter}
+            metadata={blogPostMetadata}
+            truncated>
+            <BlogPostContent />
+          </BlogPostItem>
+        ))}
+        <BlogListPaginator metadata={metadata} />
+      </main>
     </Layout>
   );
 }

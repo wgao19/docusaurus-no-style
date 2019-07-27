@@ -47,6 +47,9 @@ aside {
   max-width: 45em;
   margin: 0 auto;
 }
+article {
+  margin-bottom: 4rem;
+}
 nav[role='paginator'] {
   margin-top: 4rem;
   display: flex;
@@ -57,4 +60,14 @@ a[role='prev']::before {
 }
 a[role='next']::after {
   content: ' »';
+}
+a[role='tag'] {
+  margin-left: 0.2em;
+}
+img[role='avatar'] {
+  width: 4rem;
+  border-radius: 50%;
+}
+section:not(:first-child) {
+  margin-top: 1rem;
 }

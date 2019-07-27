@@ -40,77 +40,60 @@ function BlogPostItem(props) {
       : frontMatter.authorImageURL;
 
     return (
-      <header>
-        <h1 className="margin-bottom--xs">
+      <section>
+        <h1>
           <Link to={permalink}>{title}</Link>
         </h1>
-        <div className="margin-bottom--sm">
-          <small>
-            {month} {day}, {year}
-          </small>
-        </div>
-        <div className="avatar margin-bottom--md">
-          {authorImageURL && (
-            <a
-              className="avatar__photo-link"
-              href={authorURL}
-              target="_blank"
-              rel="noreferrer noopener">
-              <img
-                className="avatar__photo"
-                src={authorImageURL}
-                alt={author}
-              />
-            </a>
-          )}
-          <div className="avatar__intro">
-            {author && (
-              <>
-                <h4 className="avatar__name">
-                  <a href={authorURL} target="_blank" rel="noreferrer noopener">
-                    {author}
-                  </a>
-                </h4>
-                <small className="avatar__subtitle">{authorTitle}</small>
-              </>
-            )}
-          </div>
-        </div>
-      </header>
+        <small>
+          {month} {day}, {year}
+        </small>
+        {authorImageURL && (
+          <a
+            className="avatar__photo-link"
+            href={authorURL}
+            target="_blank"
+            rel="noreferrer noopener">
+            <img role="avatar" src={authorImageURL} alt={author} />
+          </a>
+        )}
+        {author && (
+          <>
+            <h4 className="avatar__name">
+              <a href={authorURL} target="_blank" rel="noreferrer noopener">
+                {author}
+              </a>
+            </h4>
+            <small className="avatar__subtitle">{authorTitle}</small>
+          </>
+        )}
+      </section>
     );
   };
 
   return (
-    <div>
+    <article>
       {renderPostHeader()}
-      <article className="markdown">
+      <section>
         <MDXProvider components={MDXComponents}>{children}</MDXProvider>
-      </article>
-      <div className="row margin-vert--lg">
-        <div className="col">
-          {tags.length > 0 && (
-            <>
-              <strong>Tags:</strong>
-              {tags.map(({label, permalink: tagPermalink}) => (
-                <Link
-                  key={tagPermalink}
-                  className="margin-horiz--sm"
-                  to={tagPermalink}>
-                  {label}
-                </Link>
-              ))}
-            </>
-          )}
-        </div>
-        <div className="col text--right">
-          {truncated && (
-            <Link to={metadata.permalink}>
-              <strong>Read More</strong>
-            </Link>
-          )}
-        </div>
-      </div>
-    </div>
+      </section>
+      <section>
+        {tags.length > 0 && (
+          <p>
+            <strong>Tags:</strong>
+            {tags.map(({label, permalink: tagPermalink}) => (
+              <Link key={tagPermalink} to={tagPermalink} role="tag">
+                {label}
+              </Link>
+            ))}
+          </p>
+        )}
+      </section>
+      {truncated && (
+        <Link to={metadata.permalink}>
+          <strong>Read More</strong>
+        </Link>
+      )}
+    </article>
   );
 }
 
