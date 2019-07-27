@@ -69,7 +69,7 @@ function Layout(props) {
         <meta name="twitter:card" content="summary" />
       </Head>
       <Navbar />
-      {children}
+      <main>{children}</main>
       {!noFooter && <Footer />}
     </React.Fragment>
   );
