@@ -8,14 +8,14 @@
 module.exports = {
   title: 'Docusaurus no style',
   tagline: 'Docusaurus 2 theme with minimum style',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://wgao19.github.io',
+  baseUrl: '/docusaurus-no-style/',
   favicon: 'img/favicon.ico',
   organizationName: 'wgao19', // Usually your GitHub org/user name.
   projectName: 'docusaurus-no-style', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: 'Docusaurus No Style 🦖',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
