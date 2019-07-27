@@ -9,7 +9,7 @@ module.exports = {
   title: 'Docusaurus no style',
   tagline: 'Docusaurus 2 theme with minimum style',
   url: 'https://wgao19.github.io',
-  baseUrl: '/docusaurus-no-style/',
+  baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'wgao19', // Usually your GitHub org/user name.
   projectName: 'docusaurus-no-style', // Usually your repo name.
