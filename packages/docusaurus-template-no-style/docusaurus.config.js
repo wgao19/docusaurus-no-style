@@ -68,7 +68,7 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc. Built with Docusaurus.`,
     },
   },
-  themes: ['@docusaurus/theme-no-style'],
+  themes: ['docusaurus-theme-no-style'],
   plugins: [
     [
       '@docusaurus/plugin-content-docs-legacy',

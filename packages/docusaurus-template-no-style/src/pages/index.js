@@ -53,7 +53,7 @@ function Home() {
           </p>
           <pre>
             <code class="language-shell">
-              $ yarn swizzle @docusaurus/theme-no-style Layout
+              $ yarn swizzle docusaurus-theme-no-style Layout
             </code>
           </pre>
           <p>
