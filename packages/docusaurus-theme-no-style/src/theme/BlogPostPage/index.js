@@ -16,20 +16,16 @@ function BlogPostPage(props) {
   const {frontMatter} = BlogPostContents;
   return (
     <Layout title={metadata.title} description={metadata.description}>
-      {BlogPostContents && (
-        <div className="container margin-vert--xl">
-          <div className="row">
-            <div className="col col--8 col--offset-2">
-              <BlogPostItem frontMatter={frontMatter} metadata={metadata}>
-                <BlogPostContents />
-              </BlogPostItem>
-              <div className="margin-vert--xl">
-                <BlogPostPaginator nextItem={nextItem} prevItem={prevItem} />
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      <main>
+        {BlogPostContents && (
+          <>
+            <BlogPostItem frontMatter={frontMatter} metadata={metadata}>
+              <BlogPostContents />
+            </BlogPostItem>
+            <BlogPostPaginator nextItem={nextItem} prevItem={prevItem} />
+          </>
+        )}
+      </main>
     </Layout>
   );
 }

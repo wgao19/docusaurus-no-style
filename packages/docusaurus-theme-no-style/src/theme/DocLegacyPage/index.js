@@ -23,7 +23,6 @@ function DocLegacyPage(props) {
   const {sidebar, description, title, permalink, image} = metadata;
   return (
     <Layout
-      noFooter
       description={description}
       title={title}
       image={image}
